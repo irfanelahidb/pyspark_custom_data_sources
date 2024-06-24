@@ -110,11 +110,10 @@ spark.dataSource.register(CommentsAPIStreamDataSource)
 (spark.readStream.format("comments_api")
  .option("api_url", "https://jsonplaceholder.typicode.com/comments")
  .option("progress_path", "/Volumes/catalog/schema/volume/custom_data_sources/progress/")
- .load().select("*", F.current_timestamp().alias("current_ts")).writeStream.option(
-    "checkpointLocation", "/Volumes/catalog/schema/volume/custom_data_sources/checkpoint/"
-).outputMode(
-    "append"
-).toTable(
-    "catalog.schema.table"
-)
+ .load()
+ .select("*", F.current_timestamp().alias("current_ts"))
+ .writeStream
+ .option("checkpointLocation", "/Volumes/catalog/schema/volume/custom_data_sources/checkpoint/")
+ .outputMode("append")
+ .toTable("catalog.schema.table")
 )
