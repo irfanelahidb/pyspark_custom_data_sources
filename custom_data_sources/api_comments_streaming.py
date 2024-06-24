@@ -14,7 +14,7 @@ workspace_url = dbutils.notebook.entry_point.getDbutils().notebook().getContext(
 
 class CommentsAPIStreamDataSource(DataSource):
     """
-    An example data source for streaming read and write using the `faker` library.
+    An example data source for streaming data from a public API containing users' comments.
     """
 
     @classmethod
