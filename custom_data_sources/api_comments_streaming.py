@@ -37,7 +37,7 @@ class CommentsAPIStreamReader(DataSourceStreamReader):
         self.api_url = options.get("api_url")
         self.progress_path = options.get("progress_path")
         self.rows_per_batch = options.get("rows_per_batch",10)
-        self.url = f"https://{workspace_url}/api/2.0/fs/files{self.progress_path}checkpoint.json"
+        self.url = f"https://{workspace_url}/api/2.0/fs/files{self.progress_path}progress.json"
         self.token = token
         self._load_progress()
         
