@@ -68,7 +68,7 @@ class CommentsAPIStreamReader(DataSourceStreamReader):
           "Authorization": f"Bearer {self.token}",
           "Content-Type": "application/json"
       }
-      data = json.dumps({"current": self.current})  # Converting Python dictionary to JSON format
+      data = json.dumps({"current": self.current}) 
       response = requests.put(url, headers=headers, data=data)
 
 
