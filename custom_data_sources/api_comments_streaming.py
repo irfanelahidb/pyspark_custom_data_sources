@@ -49,10 +49,6 @@ class CommentsAPIStreamReader(DataSourceStreamReader):
         return {"offset": 0}
       
     def _load_progress(self):
-      """
-      Loads 
-      """
-      
       headers = {
           "Authorization": f"Bearer {self.token}",
       }
